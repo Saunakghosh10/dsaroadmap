@@ -398,7 +398,12 @@ export default function App() {
                 </div>
                 <div style={{ fontSize: "12px", color: "#555", marginTop: "2px" }}>{phase.subtitle}</div>
               </div>
-              <div style={{ color: "#333", fontSize: "18px" }}>{openPhase === pi ? "▲" : "▼"}</div>
+              <div style={{
+                color: openPhase === pi ? phase.color : "#444",
+                fontSize: "14px",
+                transform: openPhase === pi ? "rotate(180deg)" : "rotate(0deg)",
+                transition: "transform 0.2s ease, color 0.2s ease",
+              }}>▼</div>
             </div>
 
             {/* Topics */}
@@ -452,7 +457,12 @@ export default function App() {
                             {diffBadge(topic.easy, topic.medium, topic.hard)}
                           </div>
                         </div>
-                        <div style={{ color: "#333", fontSize: "14px" }}>{isOpen ? "▲" : "▼"}</div>
+                        <div style={{
+                color: isOpen ? "#888" : "#444",
+                fontSize: "12px",
+                transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                transition: "transform 0.2s ease, color 0.2s ease",
+              }}>▼</div>
                       </div>
 
                       {/* Topic Detail */}
