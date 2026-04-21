@@ -339,9 +339,10 @@ export default function App() {
             fontSize: "clamp(28px, 5vw, 48px)",
             fontWeight: 800,
             margin: "0 0 8px",
-            letterSpacing: "-1px",
+            letterSpacing: "-2px",
             lineHeight: 1.1,
-            fontFamily: "system-ui, sans-serif",
+            fontFamily: "'Inter', system-ui, sans-serif",
+            textTransform: "uppercase",
           }}>
             DSA MASTERY<br />
             <span style={{ color: "#333" }}>ROADMAP</span>
@@ -385,12 +386,12 @@ export default function App() {
                 fontWeight: 900,
                 color: phase.color + "30",
                 lineHeight: 1,
-                fontFamily: "system-ui",
+                fontFamily: "'Inter', system-ui, sans-serif",
                 minWidth: "48px",
               }}>{phase.phase}</span>
               <div style={{ flex: 1 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
-                  <span style={{ fontSize: "16px", fontWeight: 700, letterSpacing: "-0.3px", fontFamily: "system-ui" }}>{phase.title}</span>
+                  <span style={{ fontSize: "16px", fontWeight: 700, letterSpacing: "-0.3px", fontFamily: "'Inter', system-ui, sans-serif" }}>{phase.title}</span>
                   <span style={{ fontSize: "11px", color: phase.color, background: phase.color + "15", padding: "2px 8px", borderRadius: "4px" }}>{phase.totalProblems} problems</span>
                 </div>
                 <div style={{ fontSize: "12px", color: "#555", marginTop: "2px" }}>{phase.subtitle}</div>
@@ -426,7 +427,7 @@ export default function App() {
                       >
                         <div style={{ flex: 1, minWidth: "200px" }}>
                           <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
-                            <span style={{ fontSize: "14px", fontWeight: 600, fontFamily: "system-ui" }}>{topic.name}</span>
+                            <span style={{ fontSize: "14px", fontWeight: 600, fontFamily: "'Inter', system-ui, sans-serif" }}>{topic.name}</span>
                             {topic.tag === "YOU ARE HERE" && (
                               <span style={{ fontSize: "10px", background: "#FFB30030", color: "#FFB300", border: "1px solid #FFB30050", padding: "1px 6px", borderRadius: "4px", fontWeight: 700 }}>
                                 ◉ YOU ARE HERE
