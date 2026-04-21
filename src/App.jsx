@@ -369,6 +369,8 @@ export default function App() {
             {/* Phase Header */}
             <div
               onClick={() => setOpenPhase(openPhase === pi ? -1 : pi)}
+              onMouseEnter={(e) => { if (openPhase !== pi) e.currentTarget.style.background = "#141414"; e.currentTarget.style.borderColor = phase.color + "30"; }}
+              onMouseLeave={(e) => { if (openPhase !== pi) e.currentTarget.style.background = "#0D0D0D"; e.currentTarget.style.borderColor = "#1A1A1A"; }}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -378,7 +380,7 @@ export default function App() {
                 border: `1px solid ${openPhase === pi ? phase.color + "40" : "#1A1A1A"}`,
                 borderRadius: openPhase === pi ? "12px 12px 0 0" : "12px",
                 cursor: "pointer",
-                transition: "all 0.2s",
+                transition: "all 0.2s ease",
               }}
             >
               <span style={{
@@ -414,6 +416,8 @@ export default function App() {
                       {/* Topic Row */}
                       <div
                         onClick={() => setOpenTopic(isOpen ? { phase: -1, topic: -1 } : { phase: pi, topic: ti })}
+                        onMouseEnter={(e) => { if (!isOpen) e.currentTarget.style.background = "#0F0F0F"; }}
+                        onMouseLeave={(e) => { if (!isOpen) e.currentTarget.style.background = "transparent"; }}
                         style={{
                           display: "flex",
                           alignItems: "center",
@@ -421,7 +425,7 @@ export default function App() {
                           padding: "16px 24px",
                           background: isOpen ? "#111" : "transparent",
                           cursor: "pointer",
-                          transition: "background 0.15s",
+                          transition: "background 0.15s ease",
                           flexWrap: "wrap",
                         }}
                       >
