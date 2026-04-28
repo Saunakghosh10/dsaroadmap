@@ -7,6 +7,7 @@ const NAV = [
   { label: "Pattern Radar", path: "/patterns" },
   { label: "Problems", path: "/problems" },
   { label: "C++ Ref", path: "/cpp" },
+  { label: "C++ Lab", path: "/cpp-lab" },
 ];
 
 export default function AppShell({ children, bestStreak }) {
