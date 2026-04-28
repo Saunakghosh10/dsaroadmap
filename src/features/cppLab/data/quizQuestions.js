@@ -59,5 +59,90 @@ export const QUIZ_QUESTIONS = [
     options: ["Gets size", "Gets first element", "Gets last element", "Deletes first"],
     ans: 1,
   },
+  {
+    q: "In C++, `unordered_map` average lookup is...",
+    options: ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+    ans: 0,
+  },
+  {
+    q: "Which container keeps keys sorted by default?",
+    options: ["unordered_map", "map", "unordered_set", "vector"],
+    ans: 1,
+  },
+  {
+    q: "Why does `sort` take `begin()` and `end()`?",
+    options: ["Iterators define the range", "It needs container size", "It avoids templates", "It only works for vectors"],
+    ans: 0,
+  },
+  {
+    q: "In BFS, when should you mark a node visited?",
+    options: ["After popping", "Before pushing/enqueuing", "Only at the end", "Never"],
+    ans: 1,
+  },
+  {
+    q: "What does `lower_bound` return?",
+    options: ["First element > x", "First element >= x", "Last element <= x", "Count of x"],
+    ans: 1,
+  },
+  {
+    q: "What does `upper_bound` return?",
+    options: ["First element > x", "First element >= x", "Last element < x", "Index of x"],
+    ans: 0,
+  },
+  {
+    q: "A `priority_queue<int, vector<int>, greater<int>>` is a...",
+    options: ["Max-heap", "Min-heap", "Sorted set", "Queue"],
+    ans: 1,
+  },
+  {
+    q: "Which is true about `end()` iterator?",
+    options: ["Points to last element", "Points one past last element", "Points to first element", "Only exists for vectors"],
+    ans: 1,
+  },
+  {
+    q: "Structured binding `auto& [k,v]` requires at least...",
+    options: ["C++11", "C++14", "C++17", "C++20"],
+    ans: 2,
+  },
+  {
+    q: "Why prefer `auto&` in `for (auto& x : v)`?",
+    options: ["It copies faster", "Avoids copying elements", "Forces sorting", "Makes it const"],
+    ans: 1,
+  },
+  {
+    q: "Monotonic stack is commonly used for...",
+    options: ["Frequency counting", "Next greater/smaller element", "Hashing strings", "Dijkstra"],
+    ans: 1,
+  },
+  {
+    q: "In sliding window max using deque, why pop_back while `a[dq.back()] <= a[r]`?",
+    options: ["Keep deque sorted decreasing", "Remove expired indices", "Make it a stack", "Avoid duplicates only"],
+    ans: 0,
+  },
+  {
+    q: "DSU / Union-Find is best for...",
+    options: ["Shortest path", "Connectivity under unions", "Topological sort", "Sorting"],
+    ans: 1,
+  },
+  {
+    q: "Path compression in DSU does what?",
+    options: ["Sorts parent array", "Flattens trees during find", "Removes nodes", "Creates adjacency list"],
+    ans: 1,
+  },
+  {
+    q: "DP state should be...",
+    options: ["As large as possible", "Minimal to represent subproblem", "Always 2D", "Always recursive only"],
+    ans: 1,
+  },
+  {
+    q: "Binary search on answer works when predicate is...",
+    options: ["Random", "Monotonic", "Always true", "Always false"],
+    ans: 1,
+  },
+  {
+    q: "Why is `lo + (hi-lo)/2` safer than `(lo+hi)/2`?",
+    options: ["It is faster", "Avoids overflow", "Avoids floating point", "Works only for vectors"],
+    ans: 1,
+  },
 ];
 

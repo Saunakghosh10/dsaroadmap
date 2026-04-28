@@ -8,10 +8,12 @@ const NAV = [
   { label: "Problems", path: "/problems" },
   { label: "C++ Ref", path: "/cpp" },
   { label: "C++ Lab", path: "/cpp-lab" },
+  { label: "Python Lab", path: "/py-lab" },
 ];
 
 export default function AppShell({ children, bestStreak }) {
   const location = useLocation();
+  const pathname = location.pathname;
 
   return (
     <div style={{
@@ -50,7 +52,7 @@ export default function AppShell({ children, bestStreak }) {
 
           <nav style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap" }}>
             {NAV.map(item => {
-              const active = location.pathname.startsWith(item.path);
+              const active = pathname === item.path || pathname.startsWith(item.path + "/");
               return (
                 <Link
                   key={item.path}
