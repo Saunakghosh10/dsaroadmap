@@ -742,4 +742,127 @@ int main() {
       },
     ]
   },
+  {
+    tier: "T6",
+    label: "MODERN & ADVANCED",
+    sublabel: "C++20 features and specialized containers",
+    color: "#10B981",
+    items: [
+      {
+        title: "C++20 Ranges",
+        note: "Pipeable views for cleaner transformations. Codeforces/LeetCode support C++20 now.",
+        code: `#include <ranges>
+namespace views = std::views;
+
+auto result = v | views::filter([](int n){ return n % 2 == 0; })
+                | views::transform([](int n){ return n * n; });
+
+// Sort using ranges
+std::ranges::sort(v);`
+      },
+      {
+        title: "std::format (C++20)",
+        note: "Safe and fast replacement for printf/sprintf. Similar to Python f-strings.",
+        code: `#include <format>
+string s = std::format("The answer is {} and {}", 42, "hello");
+// Much faster and safer than stringstream`
+      },
+      {
+        title: "Policy Based Data Structures",
+        note: "The 'Secret Sauce' for CP. Allows O(log n) finding by index and getting order of element.",
+        code: `#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+
+typedef tree<int, null_type, less<int>, rb_tree_tag,
+             tree_order_statistics_node_update> ordered_set;
+
+ordered_set s;
+s.insert(1); s.insert(2); s.insert(4);
+
+s.find_by_order(1); // returns iterator to 2nd element (2)
+s.order_of_key(4);  // returns number of elements < 4 (2)`
+      },
+      {
+        title: "Sparse Table",
+        note: "O(1) range queries for idempotent functions (min, max, gcd). Build time O(N log N).",
+        code: `int st[N][K];
+for (int i = 0; i < n; i++) st[i][0] = a[i];
+for (int j = 1; j <= K; j++)
+    for (int i = 0; i + (1 << j) <= n; i++)
+        st[i][j] = min(st[i][j-1], st[i + (1 << (j-1))][j-1]);
+
+int query(int L, int R) {
+    int j = log2_floor[R - L + 1];
+    return min(st[L][j], st[R - (1 << j) + 1][j]);
+}`
+      }
+    ]
+  },
+  {
+    tier: "T7",
+    label: "STRING ALGORITHMS",
+    sublabel: "Pattern matching and string hashing",
+    color: "#EC4899",
+    items: [
+      {
+        title: "Polynomial Rolling Hash",
+        note: "Convert strings to numbers to compare in O(1). Use large prime and base.",
+        code: `const int p = 31;
+const int m = 1e9 + 9;
+long long compute_hash(string const& s) {
+    long long hash_value = 0;
+    long long p_pow = 1;
+    for (char c : s) {
+        hash_value = (hash_value + (c - 'a' + 1) * p_pow) % m;
+        p_pow = (p_pow * p) % m;
+    }
+    return hash_value;
+}`
+      },
+      {
+        title: "KMP Algorithm",
+        note: "O(n + m) string matching using prefix function.",
+        code: `vector<int> prefix_function(string s) {
+    int n = s.length();
+    vector<int> pi(n);
+    for (int i = 1; i < n; i++) {
+        int j = pi[i-1];
+        while (j > 0 && s[i] != s[j]) j = pi[j-1];
+        if (s[i] == s[j]) j++;
+        pi[i] = j;
+    }
+    return pi;
+}`
+      }
+    ]
+  },
+  {
+    tier: "T8",
+    label: "COMPETITIVE MATH",
+    sublabel: "Number theory and combinatorics",
+    color: "#F59E0B",
+    items: [
+      {
+        title: "Sieve of Eratosthenes",
+        note: "Find all primes up to N in O(N log log N).",
+        code: `vector<bool> is_prime(n+1, true);
+is_prime[0] = is_prime[1] = false;
+for (int p = 2; p * p <= n; p++) {
+    if (is_prime[p]) {
+        for (int i = p * p; i <= n; i += p)
+            is_prime[i] = false;
+    }
+}`
+      },
+      {
+        title: "Modular Inverse (Fermat)",
+        note: "Find (1/a) mod m where m is prime using a^(m-2) mod m.",
+        code: `long long modInverse(long long n, int mod) {
+    return power(n, mod - 2, mod);
+}
+// Use the power function from T4`
+      }
+    ]
+  }
 ];

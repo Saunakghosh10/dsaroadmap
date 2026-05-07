@@ -6,5 +6,12 @@ export default defineConfig({
   base: '/',
   server: {
     historyApiFallback: true,
+    proxy: {
+      '/api/nvidia': {
+        target: 'https://integrate.api.nvidia.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/nvidia/, ''),
+      }
+    }
   },
 })

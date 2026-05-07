@@ -4,11 +4,13 @@ import { ALL_PROBLEMS } from "../data/patternData";
 
 const NAV = [
   { label: "Roadmap", path: "/roadmap" },
-  { label: "Pattern Radar", path: "/patterns" },
-  { label: "Problems", path: "/problems" },
+  { label: "Patterns", path: "/patterns" },
   { label: "C++ Ref", path: "/cpp" },
-  { label: "C++ Lab", path: "/cpp-lab" },
-  { label: "Python Lab", path: "/py-lab" },
+  { label: "Flashcards", path: "/flashcards" },
+  { label: "Quiz", path: "/syntax-quiz" },
+  { label: "AI Mock", path: "/ai-interview" },
+  { label: "Resources", path: "/resources" },
+  { label: "Daily", path: "/revision" },
 ];
 
 export default function AppShell({ children, bestStreak }) {

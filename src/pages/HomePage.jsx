@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { PATTERNS, PATTERN_META, ALL_PROBLEMS } from "../data/patternData";
 import { roadmap } from "../data/roadmapData";
+import RevisionSystem from "../components/RevisionSystem";
 
 export default function HomePage() {
   const totalProblems = roadmap.reduce((a, p) => a + p.totalProblems, 0);
@@ -142,7 +143,7 @@ export default function HomePage() {
       </div>
 
       {/* Roadmap Preview */}
-      <div>
+      <div style={{ marginBottom: "56px" }}>
         <div style={{ fontSize: "11px", color: "#333", letterSpacing: "3px", marginBottom: "16px", textTransform: "uppercase" }}>
           5-Phase Roadmap
         </div>
@@ -180,6 +181,9 @@ export default function HomePage() {
           ))}
         </div>
       </div>
+
+      {/* Revision System */}
+      <RevisionSystem />
     </div>
   );
 }

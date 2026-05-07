@@ -11,6 +11,12 @@ import PythonSyntaxLabPage from "./pages/PythonSyntaxLabPage";
 import QuizSetupPage from "./pages/QuizSetupPage";
 import QuizSessionPage from "./pages/QuizSessionPage";
 import QuizResultPage from "./pages/QuizResultPage";
+import FlashcardsPage from "./pages/FlashcardsPage";
+import TechDocsPage from "./pages/TechDocsPage";
+import RevisionPage from "./pages/RevisionPage";
+import SyntaxQuizPage from "./pages/SyntaxQuizPage";
+import AiInterviewPage from "./pages/AiInterviewPage";
+import ResourceHubPage from "./pages/ResourceHubPage";
 
 export default function App() {
   const quiz = useQuiz();
@@ -28,6 +34,12 @@ export default function App() {
         <Route path="/quiz" element={<QuizSetupPage onStartQuiz={quiz.startQuiz} />} />
         <Route path="/quiz/session" element={<QuizSessionPage quiz={quiz} />} />
         <Route path="/quiz/results" element={<QuizResultPage quiz={quiz} />} />
+        <Route path="/flashcards" element={<FlashcardsPage />} />
+        <Route path="/tech-docs" element={<TechDocsPage />} />
+        <Route path="/revision" element={<RevisionPage />} />
+        <Route path="/syntax-quiz" element={<SyntaxQuizPage />} />
+        <Route path="/ai-interview" element={<AiInterviewPage />} />
+        <Route path="/resources" element={<ResourceHubPage />} />
       </Routes>
     </AppShell>
   );
